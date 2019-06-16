@@ -1,0 +1,11 @@
+Description:
+        C/C++ implementation of common ML algorithms, helper classes and
+methods, using efficient algorithms and highly optimized for cache usage.
+The main goal is to get a good performance on SBCs (especially Raspberry Pi Zero
+and Raspberry Pi 3 B+).
+
+TODO:
+        0. Makefile
+        1. Finish the linear regression model
+        2. Write some tests
+        3. Write linear matrix operations using efficient algorithms
