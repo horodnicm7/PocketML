@@ -1,5 +1,8 @@
 #pragma once
 
+const double EULER = 2.7182;
+const double PI = 3.141592; 
+
 // function that splits a set of data in 2 (training and testing), depending
 // on the test_ratio. The first elements are assigned to testing
 template<typename T>
