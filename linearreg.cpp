@@ -3,7 +3,8 @@
 
 template<typename T>
 LinearRegression<T>::LinearRegression() {
-
+        this->a = 0;
+        this->b = 0;
 }
 
 template<typename T>
@@ -27,7 +28,15 @@ void LinearRegression<T>::train(T *x, T *y, int len) {
 
 template<typename T>
 T* LinearRegression<T>::predict(T *y, int len) {
+        T *prediction = new T[len];
+        T *py = &y[0];
+        T *pp = &prediction[0];
 
+        for (int i = 0; i < len; i++, py++, pp++) {
+                *pp = this->function(*py);
+        }
+
+        return prediction;
 }
 
 template<typename T>
@@ -40,4 +49,9 @@ double LinearRegression<T>::mean(T *v, int len) {
         }
 
         return sum / len;
+}
+
+template<typename T>
+double LinearRegression<T>::function(T x) {
+        return this->a + this->b * x;
 }

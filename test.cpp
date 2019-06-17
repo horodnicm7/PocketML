@@ -133,22 +133,21 @@ void split_data(T *data_x, T *data_y, int len, T **train_x, T **train_y,
         register T *p1 = &(*test_x)[0];
         register T *p2 = &(*test_y)[0];
 
-        for (int i = 0; i < len; i++) {
-                if (i < test_len) {
-                        *p1 = data_x[i];
-                        *p2 = data_y[i];
-                        p1++;
-                        p2++;
-                } else {
-                        if (test_len == i) {
-                                p1 = &(*train_x)[0];
-                                p2 = &(*train_y)[0];
-                        }
-                        *p1 = data_x[i];
-                        *p2 = data_y[i];
-                        p1++;
-                        p2++;
-                }
+        for (int i = 0; i < test_len; i++) {
+                *p1 = data_x[i];
+                *p2 = data_y[i];
+                p1++;
+                p2++;
+        }
+
+        p1 = &(*train_x)[0];
+        p2 = &(*train_y)[0];
+
+        for (int i = test_len; i < len; i++) {
+                *p1 = data_x[i];
+                *p2 = data_y[i];
+                p1++;
+                p2++;
         }
 }
 
@@ -159,7 +158,7 @@ void test_split_data_1() {
 
         int *tx, *ty, *trx, *trry;
         double ratio = 0.7;
-        int len = (int) ((double) N * ratio);;
+        int len = (int) ((double) N * ratio);
 
         split_data<int>(x, y, N, &trx, &trry, &tx, &ty, ratio);
 
