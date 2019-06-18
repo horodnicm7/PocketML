@@ -1,4 +1,8 @@
-#include "logisticreg.h"
+#pragma once
+#include <iostream>
+#include "../models/logisticreg.hpp"
+
+using namespace std;
 
 void test_logistic_regression_1() {
         // corect output: [0 0 1 1 1]

@@ -1,4 +1,8 @@
-#include "utils.h"
+#pragma once
+#include <math.h>
+
+#define EULER 2.7182
+#define PI 3.141592
 
 // function that splits a set of data in 2 (training and testing), depending
 // on the test_ratio. The first elements are assigned to testing

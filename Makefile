@@ -1,5 +1,5 @@
-build:
-	g++ test.cpp linearreg.cpp metrics.cpp -o main
+build: test.cpp
+	g++ -o main test.cpp
 clean:
-	rm -f main
 	rm -f *.o
+	rm -f main

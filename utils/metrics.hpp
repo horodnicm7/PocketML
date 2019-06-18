@@ -1,5 +1,5 @@
+#pragma once
 #include <math.h>
-#include "metrics.h"
 
 // function to compute the "mean squared error"
 template<typename T>

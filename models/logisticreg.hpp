@@ -1,7 +1,23 @@
+#pragma once
 #include <math.h>
-#include "logisticreg.h"
-#include "linearreg.h"
-#include "utils.h"
+#include "linearreg.hpp"
+#include "../utils/utils.hpp"
+
+template<typename T>
+class LogisticRegression {
+public:
+        LogisticRegression();
+        void train(T *x, double *y, int len);
+        double* predict(T *x, int len, bool round);
+
+        void set_thresold(double threshold);
+        void set_delta(double delta);
+
+        double a, b, threshold;
+        double delta;
+private:
+        double function(T x);
+};
 
 template<typename T>
 LogisticRegression<T>::LogisticRegression() {

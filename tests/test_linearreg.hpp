@@ -1,4 +1,9 @@
-#include "linearreg.h"
+#pragma once
+#include <iostream>
+#include "../utils/metrics.hpp"
+#include "../models/linearreg.hpp"
+
+using namespace std;
 
 void test_linear_regression_1() {
         LinearRegression<double, double> *lr = new LinearRegression<double, double>();
@@ -13,17 +18,16 @@ void test_linear_regression_1() {
 
         cout << lr->a << " " << lr->b << endl;
         double *t = lr->predict(test_x, NT);
-        cout << "Finished predicting...\n";
 
         for (int i = 0; i < NT; i++) {
                 cout << test_x[i] << " -> " << t[i] << endl;
         }
         cout << endl;
 
-        //cout << "MSE: " << MSE(data_x, t, NT) << endl;
-        //cout << "MAE: " << MAE(data_x, t, NT) << endl;
-        //cout << "MSLE: " << MSLE(data_x, t, NT) << endl;
-        //cout << "RMSE: " << RMSE(data_x, t, NT) << endl;
+        cout << "MSE: " << MSE(data_x, t, NT) << endl;
+        cout << "MAE: " << MAE(data_x, t, NT) << endl;
+        cout << "MSLE: " << MSLE(data_x, t, NT) << endl;
+        cout << "RMSE: " << RMSE(data_x, t, NT) << endl;
 
         delete t;
         delete lr;

@@ -1,4 +1,8 @@
-#include "utils.h"
+#pragma once
+#include <iostream>
+#include "../utils/utils.hpp"
+
+using namespace std;
 
 void test_split_data_1() {
         int x[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
