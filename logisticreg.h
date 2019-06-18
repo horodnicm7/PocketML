@@ -1,15 +1,17 @@
 #pragma once
 
-template<typename T1, typename T2>
+template<typename T>
 class LogisticRegression {
 public:
         LogisticRegression();
-        void train(T1 *x, T2 *y, int len);
-        T2* predict(T1 *x, int len);
+        void train(T *x, double *y, int len);
+        double* predict(T *x, int len, bool round);
 
         void set_thresold(double threshold);
+        void set_delta(double delta);
 
         double a, b, threshold;
+        double delta;
 private:
-        T2 function(T1 x);
+        double function(T x);
 };
