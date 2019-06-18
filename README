@@ -6,6 +6,8 @@ and Raspberry Pi 3 B+).
 
 TODO:
         0. Makefile
-        1. Finish the linear regression model
-        2. Write some tests
+        [1. Finish the linear regression model]
+        [2. Write some tests]
         3. Write linear matrix operations using efficient algorithms
+        [4. Finish the logistic regression model]
+        5. Stress test and optimize the existing models
