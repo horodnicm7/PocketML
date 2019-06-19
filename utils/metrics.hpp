@@ -48,3 +48,19 @@ template<typename T>
 double RMSE(T *expected, T *actual, int len) {
         return sqrt(MSE(expected, actual, len));
 }
+
+// function that computes how many predictions were as expected
+template<typename T>
+double accuracy(T *expected, T *actual, int len) {
+        int correct = 0;
+        T *p1 = &expected[0];
+        T *p2 = &actual[0];
+
+        for (int i = 0; i < len; i++, p1++, p2++) {
+                if (*p1 == *p2) {
+                        correct++;
+                }
+        }
+
+        return (double) (len / correct);
+}
