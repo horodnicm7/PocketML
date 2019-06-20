@@ -116,8 +116,8 @@ void LinearRegression<T1, T2>::train(T1 *x, T2 *y, int len) {
                 this->a = mean_y - this->b * mean_x;
         } else {
                 this->length = len;
-                this->x = x;
-                this->y = y;
+                this->x = &x[0];
+                this->y = &y[0];
 
                 auto start = high_resolution_clock::now();
                 thread **mean_ths = new thread*[this->no_threads];
@@ -129,7 +129,7 @@ void LinearRegression<T1, T2>::train(T1 *x, T2 *y, int len) {
                         delete mean_ths[i];
                 }
                 delete[] mean_ths;
-                
+
                 double mean_x = this->sum_x / len;
                 double mean_y = this->sum_y / len;
                 auto stop = high_resolution_clock::now();
