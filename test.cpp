@@ -4,6 +4,7 @@
 #include "tests/test_linearreg.hpp"
 #include "tests/test_logisticreg.hpp"
 #include "tests/test_utils.hpp"
+#include "utils/metrics.hpp"
 
 using namespace std;
 
