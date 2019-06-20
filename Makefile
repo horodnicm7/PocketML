@@ -1,5 +1,5 @@
 build: test.cpp
-	g++ -o main test.cpp -lpthread
+	g++ -o main test.cpp -lpthread -g
 linklib: test.cpp
 	g++ -L. -lpocketml -o main $^
 buildlib: linearreg.o logisticreg.o

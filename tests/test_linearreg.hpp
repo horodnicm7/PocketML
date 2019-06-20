@@ -55,8 +55,8 @@ void test_linear_regression_1(int no_threads) {
         cout << "Time taken by prediction: " << duration.count() << " milliseconds" << endl << endl;
 
 
-        /*cout << lr->a << " " << lr->b << endl;
-        for (int i = 0; i < NT; i++) {
+        cout << lr->a << " " << lr->b << endl;
+        /*for (int i = 0; i < NT; i++) {
                 cout << test_x[i] << " -> " << t[i] << endl;
         }
         cout << endl;*/
@@ -66,9 +66,9 @@ void test_linear_regression_1(int no_threads) {
         cout << "MSLE: " << MSLE(data_x, t, NT) << endl;
         cout << "RMSE: " << RMSE(data_x, t, NT) << endl;*/
 
-        delete t;
+        delete[] t;
         delete lr;
-        delete data_x;
-        delete data_y;
-        delete test_x;
+        delete[] data_x;
+        delete[] data_y;
+        delete[] test_x;
 }
